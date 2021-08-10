@@ -1,12 +1,22 @@
 import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default memo(function WAppHeader(){
+import {
+  HeaderWrapper,
+  HeaderLeft,
+  HeaderRight
+} from './style';
+
+export default memo(function WAppHeader() {
   return (
-    <div>
-      <NavLink to={"/"}>发现音乐</NavLink>
-      <NavLink to={"/mine"}>我的音乐</NavLink>
-      <NavLink to={"/friend"}>朋友</NavLink>
-    </div>
-  )
-})
+    <HeaderWrapper>
+      <div className={'content wrap_v1'}>
+        <HeaderLeft>
+          <a href="#/" className={"logo sprite_01"}></a>
+        </HeaderLeft>
+        <HeaderRight>right</HeaderRight>
+      </div>
+      <div className={'divider'}></div>
+    </HeaderWrapper>
+  );
+});
