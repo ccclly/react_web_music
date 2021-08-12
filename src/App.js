@@ -1,19 +1,24 @@
 import React, { memo } from 'react';
 import { renderRoutes } from 'react-router-config';
 import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import router from './router';
+import routers from './router';
+import store from './store';
 
 import WAppHeader from '@/component/app-header';
 import WAppFooter from '@/component/app-footer';
 
 function App() {
   return (
-    <HashRouter>
-      <WAppHeader/>
-      {renderRoutes(router)}
-      <WAppFooter/>
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <WAppHeader/>
+        {renderRoutes(routers)}
+        <WAppFooter/>
+      </HashRouter>
+    </Provider>
+
   );
 }
 

@@ -99,6 +99,7 @@ export const HeaderRight = styled.div`
   display: flex;
   font-size: 12px;
   align-items: center;
+  margin-right: 30px;
 
   .search {
     width: 158px;
