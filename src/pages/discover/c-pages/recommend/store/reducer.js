@@ -1,16 +1,18 @@
+import * as actionTypes from './constants';
 
-import {
-  CHANGE_TOP_BANNERS
-} from './constants';
+const defaultState = {
+  topBanners: [],
+  hotRecommends: [],
+  newAlbums: [],
 
-const defaultState={
-  topBanners: []
-}
+};
 
 function reducer(state = defaultState, action) {
   switch (action.type) {
-    case CHANGE_TOP_BANNERS:
-      return {...state, topBanners: []}
+    case actionTypes.CHANGE_TOP_BANNERS:
+      return { ...state, topBanners: action.topBanners };
+    case actionTypes.CHANGE_HOT_RECOMMEND:
+      return { ...state, hotRecommends: action.hotRecommends };
     default:
       return state;
   }

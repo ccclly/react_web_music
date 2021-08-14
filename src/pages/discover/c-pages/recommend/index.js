@@ -1,9 +1,27 @@
 import React, { memo } from 'react';
 
+import TopBanner from './c-cpns/top-banner';
+import HotRecommend from './c-cpns/hot-recommend';
+
+import {
+  RecommendWrapper,
+  Content,
+  RecommendLeft,
+  RecommendRight,
+} from './style';
+
 export default memo(function Recommend() {
   return (
-    <div>
-      <h2>Recommend</h2>
-    </div>
+    <RecommendWrapper>
+      <TopBanner/>
+      <Content className={'wrap_v2'}>
+        <RecommendLeft>
+          <HotRecommend/>
+        </RecommendLeft>
+        <RecommendRight>
+
+        </RecommendRight>
+      </Content>
+    </RecommendWrapper>
   );
 });
